@@ -1,0 +1,22 @@
+@import '../../../styles/_variables'
+
+.nav-tabs
+  padding-bottom: 6px
+  border-bottom: 2px solid $dark-grey 
+
+.nav-li
+  background-color: $light-grey
+  border: none
+  a
+    background: transparent
+    border: none
+    color: $dark
+    border-radius: 16px;
+    &:hover
+      color: $blue
+  &.active
+    background-color: transparent
+    a
+      color: $light
+      background-color: $orange
+      border: none

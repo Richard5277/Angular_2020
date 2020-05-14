@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
-import { Post } from '../modules/post.module';
+import { Post } from '../models/post.model';
 import { Subject, throwError } from 'rxjs';
 
 @Injectable({
