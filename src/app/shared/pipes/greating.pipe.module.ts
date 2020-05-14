@@ -11,7 +11,7 @@ function capitalize(str: string) {
 }
 
 function exclaim(str: string) {
-  return str + '!';
+  return `[ ${str} ! ]`;
 }
 
 @Pipe({
