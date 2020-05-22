@@ -15,8 +15,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      console.log('👏 data received in detail CP ::: ', data);
-      this.post = data.post;
+      this.post = data.post.post;
     });
   }
 

@@ -46,7 +46,7 @@ export class PostService {
       catchError(errorRes => {
         return throwError(errorRes);
       }))
-      .subscribe(posts => this.posts.next(posts), error => this.error.next(error));
+      .subscribe(posts => this.posts.next(posts.slice()), error => this.error.next(error));
   }
 
   fetchSinglePost(index: number) {
@@ -54,7 +54,8 @@ export class PostService {
       .get<{[key: string]: Post}>('https://angular-demo-bd2d6.firebaseio.com/posts.json')
       .pipe(
         map( responseData => {
-          return Object.values(responseData)[index];
+          const post = Object.values(responseData)[index];
+          return {...post, language: post.language ? post.language : 'ANY'};
       }),
       catchError(errorRes => {
         return throwError(errorRes);
@@ -72,7 +73,6 @@ export class PostService {
         }
       ).subscribe(
         responseData => {
-          console.log(responseData);
           this.fetchPosts();
         },
         error => {
@@ -89,7 +89,6 @@ clearPosts() {
       }
       ).pipe(
         tap(event => {
-          console.log(event);
           if ( event.type === HttpEventType.Sent) {
             // request sent, waiting for response...
             console.log('request sent, waiting for response...');

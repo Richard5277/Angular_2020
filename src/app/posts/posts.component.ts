@@ -16,11 +16,23 @@ export class PostsComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   error = '';
 
+  items = [
+    {id: 1, name: 'Python'},
+    {id: 2, name: 'Node Js'},
+    {id: 3, name: 'Java'},
+    {id: 4, name: 'PHP'},
+    {id: 5, name: 'Django'},
+    {id: 6, name: 'Angular'},
+    {id: 7, name: 'Vue'},
+    {id: 8, name: 'ReactJs'},
+  ];
+  selectedLanguage: string;
+
   @ViewChild('postForm') postForm: NgForm;
 
   private errorSub: Subscription;
 
-  constructor( private postsService: PostService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private postsService: PostService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.errorSub = this.postsService.error.subscribe(error => {
@@ -32,13 +44,12 @@ export class PostsComponent implements OnInit, OnDestroy {
       this.loadedPosts = posts;
     });
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.errorSub.unsubscribe();
-    console.log('🦁 destroy');
   }
 
-  onCreatePost(postData: {title: string, content: string}) {
-    const newPost: Post = {title: postData.title, content: postData.content};
+  onCreatePost(postData: { title: string, content: string, language?: string }) {
+    const newPost: Post = { title: postData.title, content: postData.content, language: postData.language };
     this.postsService.sendPost(newPost);
     this.postForm.reset();
   }
@@ -58,7 +69,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.error = null;
   }
 
-  onHandleNavPostDetail(index: string){
+  onHandleNavPostDetail(index: string) {
     this.router.navigate(['detail', index], { relativeTo: this.route });
   }
 

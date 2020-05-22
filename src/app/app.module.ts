@@ -16,6 +16,7 @@ import { LoggingInterceptorService } from './shared/services/interceptors/loggin
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostDetailResolver } from './shared/services/post-detail-resolver.service';
 import { PostNoselectComponent } from './posts/post-noselect/post-noselect.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PostNoselectComponent } from './posts/post-noselect/post-noselect.compo
     HomeComponent,
     NavBarComponent,
     PostDetailComponent,
-    PostNoselectComponent
+    PostNoselectComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
