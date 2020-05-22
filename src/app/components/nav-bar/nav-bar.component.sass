@@ -1,8 +1,9 @@
 @import "~src/styles/_variables"
+@import "~src/styles/_groupings"
 
 .nav-tabs
-  padding-bottom: 6px
-  border-bottom: 2px solid $dark-grey 
+  padding-bottom: $space-xsmall
+  border-bottom: $nav-padding-bottom solid $dark-grey 
 
 .nav-li
   background-color: $light-grey
@@ -11,7 +12,7 @@
     background: transparent
     border: none
     color: $dark
-    border-radius: 16px;
+    border-radius: $nav-link-radius
     &:hover
       color: $blue
   &.active

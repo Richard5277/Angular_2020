@@ -1,16 +1,23 @@
 @import "~src/styles/_variables"
+@import "~src/styles/_mixins"
+@import "~src/styles/_groupings"
 
 .card-container
-  padding-bottom: 24px
-  margin-bottom: 24px
+  height: $card-basic-height
+  padding-bottom: $space-large
   background-color: $paper-light
+  margin-bottom: $space-large
+  display: block
 .card-header
   background-color: $blue
-  padding: 6px
-  border-radius: 8px
+  padding: $space-small
+  border-radius: $card-radius
   display: flex
   align-items: center
-  margin-bottom: 8px
+  margin-bottom: $space-small
+.card-button
+  position: absolute
+  bottom: $space-basic
 
 .mat-card-header .mat-card-title
   margin: 0
@@ -23,4 +30,4 @@
   justify-content: center
   align-items: center
 .material-icons
-  font-size: 24px
+  font-size: $card-icon-size

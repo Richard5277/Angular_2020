@@ -1,4 +1,14 @@
-.home-container
-.home-title
-  text-align: center
-  padding: 36px
+@import "~src/styles/_variables"
+@import "~src/styles/_mixins"
+
+.home_page
+  &-title
+    text-align: center
+    padding: $space-xlarge
+  &-cards
+    display: grid
+    +mq($s-sml)
+      grid-template-columns: 1fr 1fr;
+  &-card
+    +mq($s-sml)
+      margin: $space-basic

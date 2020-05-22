@@ -2,7 +2,7 @@
 @import "~src/styles/_variables"
 @import "~src/styles/_mixins"
 .app-post
-  margin-top: 24px
+  margin-top: $space-large
   display: flex
   flex-direction: column
   +mq($s-sml)
@@ -10,9 +10,9 @@
   &-form
     font-size: $fs-lrg
   &-detail
-    background-color: $dark-grey
-    color: $orange
+    background-color: transparent
+    color: $dark
 
 .post-item
-  margin-top: 24px
-  margin-bottom: 24px
+  margin-top: $space-large
+  margin-bottom: $space-large

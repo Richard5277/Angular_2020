@@ -1,10 +1,9 @@
-<div class="home-container">
-  <h1 class="home-title">Angular 9 Storybook</h1>
-  <div *ngFor="let card of cards">
-
-    <app-card [card]="card"></app-card>
-
+<div class="home_page">
+  <h1 class="home_page-title">Angular 9 Storybook</h1>
+  <div class="home_page-cards">
+    <div *ngFor="let card of cards" class="home_page-card">
+      <app-card [card]="card"></app-card>
+    </div>
   </div>
-
 </div>
 
