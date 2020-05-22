@@ -1,2 +1,18 @@
+// add '~' to indicate this is not a relative import
+@import "~src/styles/_variables"
+@import "~src/styles/_mixins"
 .app-post
   margin-top: 24px
+  display: flex
+  flex-direction: column
+  +mq($s-sml)
+    flex-direction: row
+  &-form
+    font-size: $fs-lrg
+  &-detail
+    background-color: $dark-grey
+    color: $orange
+
+.post-item
+  margin-top: 24px
+  margin-bottom: 24px

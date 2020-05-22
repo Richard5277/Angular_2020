@@ -1,7 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { PostService } from 'src/app/shared/services/post.service';
 import { Post } from 'src/app/shared/models/post.model';
 import { Subscription } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-posts',
@@ -13,9 +15,12 @@ export class PostsComponent implements OnInit, OnDestroy {
   isFetchingPosts = false;
   loadedPosts: Post[] = [];
   error = '';
+
+  @ViewChild('postForm') postForm: NgForm;
+
   private errorSub: Subscription;
 
-  constructor( private postsService: PostService) { }
+  constructor( private postsService: PostService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.errorSub = this.postsService.error.subscribe(error => {
@@ -29,11 +34,13 @@ export class PostsComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(){
     this.errorSub.unsubscribe();
+    console.log('🦁 destroy');
   }
 
   onCreatePost(postData: {title: string, content: string}) {
     const newPost: Post = {title: postData.title, content: postData.content};
     this.postsService.sendPost(newPost);
+    this.postForm.reset();
   }
   onFetchPosts() {
     this.isFetchingPosts = true;
@@ -49,6 +56,10 @@ export class PostsComponent implements OnInit, OnDestroy {
 
   onHandleError() {
     this.error = null;
+  }
+
+  onHandleNavPostDetail(index: string){
+    this.router.navigate(['detail', index], { relativeTo: this.route });
   }
 
 }
