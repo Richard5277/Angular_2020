@@ -28,6 +28,11 @@ export class HomeComponent implements OnInit {
       title: 'Sass Styling',
       content: ['* Custom theme with sass control', '* Sass variables & mixins', '* Config sass import with webpack'],
       icon: 'style'
+    },
+    {
+      title: 'Angular Life Cycle',
+      content: ['* All life cycle methods in Angular application runtime', '* Tic Tac Toe - simple game', '* javascript injection inside Angular'],
+      icon: '360'
     }
   ];
 

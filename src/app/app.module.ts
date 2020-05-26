@@ -17,6 +17,8 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostDetailResolver } from './shared/services/post-detail-resolver.service';
 import { PostNoselectComponent } from './posts/post-noselect/post-noselect.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { InterviewComponent } from './interview/interview.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     NavBarComponent,
     PostDetailComponent,
     PostNoselectComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LifeCycleComponent,
+    InterviewComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostDetailResolver } from './shared/services/post-detail-resolver.service';
 import { PostNoselectComponent } from './posts/post-noselect/post-noselect.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { InterviewComponent } from './interview/interview.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
     path: 'employee',
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
   },
+  { path: 'life-cycle', component: LifeCycleComponent},
+  { path: 'interview', component: InterviewComponent},
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
   { path: '**', redirectTo: '/not-found' }
 ];

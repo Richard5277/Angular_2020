@@ -1,0 +1,23 @@
+@import "~src/styles/_variables"
+@import "~src/styles/_groupings"
+  
+.game_title
+  margin-top: $space-large
+.game_field
+  margin-top: $space-large
+  width: $field-size
+.square
+  width: $box-size
+  height: $box-size
+button:focus
+  outline: none
+.row
+  display: grid
+  grid-template-columns: $column-size $column-size $column-size
+  grid-auto-flow: column
+.filled
+  border: 1px solid black
+.playerOne
+  background-color: green
+.playerTwo
+  background-color: red
