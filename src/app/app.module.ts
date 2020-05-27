@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,12 @@ import { PostNoselectComponent } from './posts/post-noselect/post-noselect.compo
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { InterviewComponent } from './interview/interview.component';
+import { BasicHightlightDirective } from './shared/directives/basic-hightlight/basic-hightlight.directive';
+import { AdvancedHightlightDirective } from './shared/directives/advanced-highlight/advanced-highlight.directive';
+import { UnlessDirective } from './shared/directives/unless/unless.directive';
+import { TemplateFormComponent } from './form-page/template-form/template-form.component';
+import { ReactiveFormComponent } from './form-page/reactive-form/reactive-form.component';
+import { AppFormComponent } from './form-page/form-page.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +36,19 @@ import { InterviewComponent } from './interview/interview.component';
     PostNoselectComponent,
     ErrorPageComponent,
     LifeCycleComponent,
-    InterviewComponent
+    InterviewComponent,
+    BasicHightlightDirective,
+    AdvancedHightlightDirective,
+    UnlessDirective,
+    AppFormComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     CardModule,

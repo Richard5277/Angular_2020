@@ -11,6 +11,12 @@ export class InterviewComponent implements OnInit {
   lastname = '';
   userName = '';
   endNumber;
+  showUnlessDirective = false;
+  switchValue = 10;
+
+  toggleUnlessDirective(){
+    this.showUnlessDirective = !this.showUnlessDirective;
+  }
 
   constructor() { }
 

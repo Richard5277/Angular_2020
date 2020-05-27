@@ -1,28 +1,54 @@
 # Angular2020
+A central place for Angular 9 best practice. Find simple solutions here and help you develop your project faster!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+## Content List
+(INCLUDING BUT NOT LIMITED TO)
 
-## Development server
+### Angular Life Cycle
+Deep understanding of how Angular app works within different life cycle
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Custom Pipe
+Building your own Pipe lets you modify data as you wanted to show.
 
-## Code scaffolding
+### Angular Routing
+A complex routing system to allow you get access to different component with many query options
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Angular Custom Directive
+A quick way modify your component with custom Directives.
 
-## Build
+### Angular Froms
+A simple way to handle form submission with both Template driving and Reactive driving approach.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Material UI for Angular
+Inject Material UI and Icons into Angular app to allow easy and fascinating UI looks.
 
-## Running unit tests
+### Sass processor
+Add sass processor to project to allow theme variables and groupings defined
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+#### Available Scripts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+In the project directory, you can run:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Angular_2020
+```bash
+npm run start
+```
+
+---
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+---
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) [2020] [Feihong Zhao]

@@ -4,3 +4,28 @@
   <button>Generate</button>
   <span id="output">generated username ...</span>
 </div>
+
+<hr />
+<section class="app-directives">
+  <h1>Directives</h1>
+  <div>
+    <h3 appBasicHighlight>Basic Highlight</h3>
+    <hr />
+    <!-- here remove [] on defaultTextColor since it is a property binding shorcut -->
+    <h3 [appAdvancedHighlight]="'black'" defaultTextColor="red">Advanced Highlight</h3>
+  </div>
+
+  <div>
+    <button (click)="toggleUnlessDirective()">Show Unless Directive</button>
+    <div *appUnless="showUnlessDirective">
+      <h3>Structual Directive</h3>
+    </div>
+  </div>
+
+  <div>
+    <div [ngSwitch]="switchValue">
+      <div *ngSwitchCase="10">Current Value : {{switchValue}}</div>
+      <div *ngSwitchDefault>Defualt Value</div>
+    </div>
+  </div>
+</section>

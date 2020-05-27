@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <input [(ngModel)]="newServerName" (input)="onInput($event.target.value)">
+  </div>
+  <!-- <div class="row">
+    <p *ngIf="newServerName !== ''; else noServer">New Server Created : {{newServerName}}</p>
+  </div>
+  <div class="row">
+    <ng-template #noServer>plz add a new server</ng-template>
+  </div> -->
+  <div class="row">
+    <button class="btn btn-primary" [disabled]="isDisabled" (click)="onCreateServer()">ADD SERVER</button>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="singupForm" (ngSubmit)="onSubmit()">
+        <div id="user-data" formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" formControlName="username" class="form-control">
+            <span *ngIf="singupForm.get('userData.username').pending">Checking Server ...</span>
+            <span *ngIf="!singupForm.get('userData.username').valid && singupForm.get('userData.username').touched">
+              <span *ngIf="singupForm.get('userData.username').errors && singupForm.get('userData.username').errors['nameIsForbidden']">Username is forbidden !</span> 
+              <span *ngIf="singupForm.get('userData.username').errors && singupForm.get('userData.username').errors['nameIsAdmin']">Username is Admin !</span>  
+              <span *ngIf="singupForm.get('userData.username').errors && singupForm.get('userData.username').errors['required']">Username is required !</span>
+            </span>
+          </div>
+          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" id="email" formControlName="email" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select id="secret" class="form-control" formControlName="secret">
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="questionAnswer" row="3" formControlName="questionAnswer"></textarea>
+          <p>Your Reply : {{answer}}</p>
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              [ngModel]="defaultGender"
+              [value]="gender"
+              formControlName="gender"
+              required
+            />
+            {{gender}}
+          </label>
+        </div>
+        <div formArrayName="hobbies">
+          <h3>Your Hobbies</h3>
+          <button (click)="clearHobbies()">CLEAR</button>
+          <button type="button" (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group" *ngFor="let hobby of hobbiesControl; index as i">
+            <input type="text" class="form-control" [formControlName]="i">
+            <button type="buton" (click)="onDeleteHobby(i)" class="bt bt-danger">Remove</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!singupForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div>
