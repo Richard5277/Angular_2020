@@ -11,13 +11,32 @@ export class HomeComponent implements OnInit {
     {
       title: 'Angular Life Cycle',
       content: ['* All life cycle methods in Angular application runtime', '* Tic Tac Toe - simple game', '* javascript injection inside Angular'],
-      icon: '360'
+      icon: '360',
+      link: '/life-cycle'
+    },
+    {
+      title: 'NgRx',
+      content: ['* NgRx implementation', '* NgRx store'],
+      icon: 'store',
+      link: '/ngrx'
+    },
+    {
+      title: 'Angular forms',
+      content: ['* Template form', '* Reactive form'],
+      icon: 'article',
+      link: '/angular-form'
+    },
+    {
+      title: 'Angular http request',
+      content: ['* Template form', '* Reactive form'],
+      icon: 'swap_vert',
+      link: '/posts'
     },
     {
       title: 'Custom Pipe',
       content: ['* Build custom pipes with angualr & ramda'],
       icon: 'build',
-      detail: 'helloworld'
+      detail: 'helloworld',
     },
     {
       title: 'Angular Routing',
@@ -27,7 +46,8 @@ export class HomeComponent implements OnInit {
     {
       title: 'Angular Custom Directive',
       content: ['* Angular default directive', '* Custom directive with different selectors'],
-      icon: 'device_hub'
+      icon: 'device_hub',
+      link: '/interview'
     },
     {
       title: 'Material UI',

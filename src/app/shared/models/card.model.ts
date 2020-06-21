@@ -5,4 +5,5 @@ export interface Card {
   content: Array<string>;
   icon: string;
   detail?: string;
+  link?: string;
 }
