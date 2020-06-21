@@ -6,6 +6,7 @@
 </div>
 
 <hr />
+
 <section class="app-directives">
   <h1>Directives</h1>
   <div>
@@ -27,5 +28,19 @@
       <div *ngSwitchCase="10">Current Value : {{switchValue}}</div>
       <div *ngSwitchDefault>Defualt Value</div>
     </div>
+  </div>
+</section>
+
+<hr />
+
+<h1>count inside interview : {{countInsideInterview$ | async}}</h1>
+
+<section>
+  <div 
+      [style.--main-border-color] = "styles.mainBorder"
+      [style.--main-background-color]="styles.mainBackgroundColor"
+  >
+    <p style="border: 3px solid var(--main-border-color); background-color: var(--main-background-color);">inline styling with properties defined within html template</p>
+    <p [ngStyle]="{'background-color': styles.mainBackgroundColor, 'width': styles.mainWidth, 'border': '3px solid '+styles.mainBorder}">ngStyle inline styling with properties defined within component ts file</p>
   </div>
 </section>

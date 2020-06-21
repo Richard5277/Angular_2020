@@ -11,6 +11,7 @@ import { InterviewComponent } from './interview/interview.component';
 import { AppFormComponent } from './form-page/form-page.component';
 import { TemplateFormComponent } from './form-page/template-form/template-form.component';
 import { ReactiveFormComponent } from './form-page/reactive-form/reactive-form.component';
+import { NgrxPageComponent } from './ngrx-page/ngrx-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
     { path: 'template', component: TemplateFormComponent },
     { path: 'reactive', component: ReactiveFormComponent }
   ]},
+  { path: 'ngrx', component: NgrxPageComponent},
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
   { path: '**', redirectTo: '/not-found' }
 ];

@@ -1,0 +1,23 @@
+<div>
+
+  <button id="increment" (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button id="decrement" (click)="decrement()">Decrement</button>
+
+<button id="reset" (click)="reset()">Reset Counter</button>
+
+</div>
+
+<hr />
+
+<div>
+  <button id="testIncrement" (click)="testIncrement()">TestIncrement</button>
+
+<div>Current Test Count: {{ testCount$ | async }}</div>
+
+<button id="testDecrement" (click)="testDecrement()">TestDecrement</button>
+
+<button id="testReset" (click)="testReset()">TestReset Counter</button>
+</div>

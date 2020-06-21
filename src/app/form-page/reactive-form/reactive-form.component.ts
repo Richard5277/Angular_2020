@@ -90,8 +90,9 @@ export class ReactiveFormComponent implements OnInit {
     this.logger.logImportant('👻', this.newServerName);
   }
 
-  onInput = (event: any) => {
-    // any event occur
+  onInput = (event: Event) => {
+    const inputEl = event.target as HTMLInputElement;
+    console.log('event value => ', inputEl.value);
   }
 
   onAddHobby = () => {

@@ -26,6 +26,19 @@ import { TemplateFormComponent } from './form-page/template-form/template-form.c
 import { ReactiveFormComponent } from './form-page/reactive-form/reactive-form.component';
 import { AppFormComponent } from './form-page/form-page.component';
 
+// ngrx
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrx/counter.reducer';
+import { testCounterReducer } from './ngrx/testCounter.reducer';
+
+import { MyCounterComponent } from './ngrx/my-counter/my-counter.component';
+import { NgrxPageComponent } from './ngrx-page/ngrx-page.component';
+
+const rootReducer = {
+  count: counterReducer,
+  myTestCount: testCounterReducer
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +55,9 @@ import { AppFormComponent } from './form-page/form-page.component';
     UnlessDirective,
     AppFormComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    MyCounterComponent,
+    NgrxPageComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +67,8 @@ import { AppFormComponent } from './form-page/form-page.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CardModule,
-    EmployeeModule
+    EmployeeModule,
+    StoreModule.forRoot(rootReducer)
   ],
   // orders of interceptors will change the output
   providers: [

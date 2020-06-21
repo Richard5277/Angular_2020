@@ -69,7 +69,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.error = null;
   }
 
-  onHandleNavPostDetail(index: string) {
+  onHandleNavPostDetail(index: number) {
     this.router.navigate(['detail', index], { relativeTo: this.route });
   }
 

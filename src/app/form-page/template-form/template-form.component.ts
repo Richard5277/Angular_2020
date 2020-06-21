@@ -18,6 +18,8 @@ export class TemplateFormComponent implements OnInit, AfterViewInit, OnChanges, 
     name: ''
   };
 
+  // { static: true } => query results available in ngOnInit
+  // { static: false } => query results available in ngAfterViewInit
   @ViewChild('f', { static: false }) myForm: NgForm;
   @ViewChild('username', { static: false }) userNameInput: NgModel;
   constructor() { }

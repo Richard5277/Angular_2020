@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-interview',
@@ -7,18 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterviewComponent implements OnInit {
 
+  countInsideInterview$: Observable<number>;
+
   firstname = '';
   lastname = '';
   userName = '';
   endNumber;
   showUnlessDirective = false;
   switchValue = 10;
+  styles = {
+    mainBorder: 'purple',
+    mainBackgroundColor : '#FEC0AA',
+    mainWidth: '200px'
+  };
+
+
 
   toggleUnlessDirective(){
     this.showUnlessDirective = !this.showUnlessDirective;
   }
 
-  constructor() { }
+  constructor(private store: Store<{count: number}>) {
+    this.countInsideInterview$ = store.pipe(select('count'));
+  }
 
   ngOnInit(): void {
     const generateButton = document.getElementsByTagName('BUTTON')[0];
