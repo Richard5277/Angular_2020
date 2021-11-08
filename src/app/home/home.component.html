@@ -1,5 +1,19 @@
 <div class="home_page">
   <h1 class="home_page-title">Angular 9 Storybook</h1>
+  <div>
+    <h1>App Config</h1>
+    <app-config></app-config>
+  </div>
+  <div>
+    <h1>File Uploader</h1>
+    <app-uploader></app-uploader>
+  </div>
+
+  <br><br><br>
+  <div>
+    <h1> MESSAGES </h1>
+    <app-messages></app-messages>
+  </div>
   <div class="home_page-cards">
     <div *ngFor="let card of cards" class="home_page-card">
       <app-card [card]="card"></app-card>

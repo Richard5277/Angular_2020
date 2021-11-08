@@ -42,7 +42,16 @@ import { MyCounterComponent } from './ngrx/my-counter/my-counter.component';
 import { NgrxPageComponent } from './ngrx-page/ngrx-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ConfigComponent } from '@components/config/config.component';
+import { ConfigModule } from '@components/config/config.module';
+import { NoopInterceptor } from './interceptors/http-interceptors/noop-interceptor';
+import { httpIntereptorProviders } from './interceptors/http-interceptors';
+import { UploaderComponent } from '@components/uploader/uploader.component';
+import { UploadInterceptor } from './interceptors/http-interceptors/upload-interceptor';
+import { UploaderService } from '@services/uploader.service';
+import { MessagesComponent } from '@components/messages/messages.component';
 
+// import { NgProgressHttpModule } from 'ngx-progressbar/http';
 
 const rootReducer = {
   count: counterReducer,
@@ -66,8 +75,10 @@ const rootReducer = {
     AppFormComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
+    NgrxPageComponent,
     MyCounterComponent,
-    NgrxPageComponent
+    UploaderComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -77,12 +88,23 @@ const rootReducer = {
     HttpClientModule,
     BrowserAnimationsModule,
     CardModule,
+    ConfigModule,
     EmployeeModule,
     StoreModule.forRoot(rootReducer),
+    // NgProgressModule.withConfig({
+    //   color: 'yellow',
+    // }),
+    // NgProgressHttpModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   // orders of interceptors will change the output
   providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: NoopInterceptor,
+    //   multi: true
+    // },
+    // httpIntereptorProviders,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
@@ -93,6 +115,12 @@ const rootReducer = {
       useClass: LoggingInterceptorService,
       multi: true
     },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: UploadInterceptor,
+    //   multi: true,
+    //   // deps: [UploaderService]
+    // },
     PostDetailResolver
   ],
   bootstrap: [AppComponent]
